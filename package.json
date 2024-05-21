@@ -1,7 +1,7 @@
 {
-  "name": "salesvisits",
+  "name": "marketwatch",
   "version": "1.0.0",
-  "description": "A merchandising",
+  "description": "A program that gives an overview of the stock market",
   "main": "index.js",
   "scripts": {
     "test": "jest",
