@@ -6,7 +6,7 @@ async function fetchDefaultStockNews() {
     }
       
     const data = await response.json();
-    if (!data) {
+    if (!data || !data.articles) {
       throw new Error("Error: No data received from News API");
     }
     const articles = data.articles;
