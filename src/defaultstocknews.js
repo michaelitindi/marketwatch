@@ -4,7 +4,7 @@ async function fetchStockNews(symbol) {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
-    
+      
     const data = await response.json();
     if (!data) {
       throw new Error("Error: No data received from News API");
@@ -16,13 +16,12 @@ async function fetchStockNews(symbol) {
       url: article.url,
       description: article.description
     }));
-    
-        
+      
+          
   }
   catch(error){
     throw new Error(error);
   }
 }
-
 
 export default fetchStockNews;
