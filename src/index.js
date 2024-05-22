@@ -67,7 +67,7 @@ searchButton.addEventListener('click', async () => {
       <div class="col">
       <a href="${article.url}" target="_blank" class="text-decoration-none">
         <div class="card">
-          <img src="${article.imageUrl}" class="card-img-top" alt="${article.title}">
+          <img src="${article.imageUrl}" class="card-img-top" alt="${article.title}" >
           <div class="card-body">
             <h5 class="card-title">${article.title}</h5>
             <p class="card-text">${article.description}</p>

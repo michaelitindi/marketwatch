@@ -2,13 +2,18 @@
   "name": "marketwatch",
   "version": "1.0.0",
   "description": "A program that gives an overview of the stock market",
+  "repository": {
+    "url": "git+https://github.com/michaelitindi/marketwatch.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "webpack --mode=development",
     "webpackServer": "webpack-dev-server --open --mode=development",
     "lint": "eslint src --ext .js",
-    "start": "npm run build && npm run webpackServer"
+    "start": "npm run build && npm run webpackServer",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -19,9 +24,11 @@
     "css-loader": "^6.8.1",
     "eslint": "^8.42.0",
     "eslint-webpack-plugin": "^4.0.1",
+    "gh-pages": "^6.1.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^29.5.0",
+    "json-server": "^1.0.0-beta.0",
     "style-loader": "^3.3.0",
     "webpack": "5.87.0",
     "webpack-cli": "^5.1.4",
