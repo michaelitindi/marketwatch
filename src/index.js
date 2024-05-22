@@ -61,8 +61,22 @@ searchButton.addEventListener('click', async () => {
   // const data = await fetchStockData(symbol);
 
   // Update UI with specific stock news and data (replace with actual data population logic)
-  stockNews.innerHTML = `<h3>${symbol} news</h3>
-  <ul>${news.map(article => `<li><a href="${article.url}">${article.title}</a></li>`).join('')}</ul>`;
+  stockNews.innerHTML = `<h3>Default Stock News</h3>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    ${news.map(article => `
+      <div class="col">
+      <a href="${article.url}" target="_blank" class="text-decoration-none">
+        <div class="card">
+          <img src="${article.imageUrl}" class="card-img-top" alt="${article.title}">
+          <div class="card-body">
+            <h5 class="card-title">${article.title}</h5>
+            <p class="card-text">${article.description}</p>
+          </div>
+        </div>
+        </a>
+      </div>
+    `).join('')}
+  </div>`;
   //stockData.innerHTML = ` <h3>Stock Data for ${symbol}</h3>
   //<ul>
   //  <li>Open: ${data.open}</li>
