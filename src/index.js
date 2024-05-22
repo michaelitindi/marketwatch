@@ -14,7 +14,7 @@ fetchStockData("AAPL")
     console.log(error);
   });
 
-fetchStockNews()
+fetchStockNews("AAPL")
   .then(data => {
     console.log(data);
   }) 
