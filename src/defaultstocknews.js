@@ -1,6 +1,6 @@
-async function fetchStockNews(symbol) {
+async function fetchDefaultStockNews() {
   try{
-    const response = await fetch(`https://newsapi.org/v2/everything?q=${symbol}&sortBy=publishedAt:desc&apiKey=b4efdbfd3cb84d29975565bfb355a60b`);
+    const response = await fetch(`https://newsapi.org/v2/everything?q=financial+markets&sortBy=publishedAt:desc&apiKey=b4efdbfd3cb84d29975565bfb355a60b`);
     if (!response.ok) {
       throw new Error(response.statusText);
     }
@@ -24,4 +24,4 @@ async function fetchStockNews(symbol) {
   }
 }
 
-export default fetchStockNews;
+export default fetchDefaultStockNews;
