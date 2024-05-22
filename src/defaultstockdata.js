@@ -6,14 +6,31 @@ async function fetchDefaultStockData() {
     }
 
     const data = await response.json();
-    if (!data) {
+    if (!data || !data["top_gainers"] || !data["top_losers"] || !data["most_actively_traded"]) {
       throw new Error("Error: No data received from Alpha Vantage");
     }
     const processedData = {
-      symbol:data["Global Quote"]["01. symbol"],
-      open: data["Global Quote"]["02. open"],
-      close: data["Global Quote"]["05. price"],
-      change: data["Global Quote"]["08. change percent"]
+      top_gainers: data["top_gainers"].map(stock => ({
+        symbol: stock["ticker"],
+        change_amount: stock["change_amount"],
+        price: stock["price"], 
+        change_percentage: stock["change_percentage"], 
+        volume: stock["volume"],
+      })),
+      top_losers: data["top_losers"].map(stock => ({
+        symbol: stock["ticker"],
+        change_amount: stock["change_amount"],
+        price: stock["price"], 
+        change_percentage: stock["change_percentage"], 
+        volume: stock["volume"],
+      })),
+      most_actively_traded: data["most_actively_traded"].map(stock => ({
+        symbol: stock["ticker"],
+        change_amount: stock["change_amount"],
+        price: stock["price"], 
+        change_percentage: stock["change_percentage"], 
+        volume: stock["volume"],
+      }))
     };
     return processedData;
         

@@ -14,7 +14,8 @@ async function fetchDefaultStockNews() {
     return topFiveArticles.map(article => ({
       title: article.title,
       url: article.url,
-      description: article.description
+      description: article.description,
+      imageUrl: article.urlToImage
     }));
       
           

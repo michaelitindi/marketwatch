@@ -14,9 +14,9 @@ module.exports = {
     new ESLintPlugin(),
     new CleanWebpackPlugin({verbose: true}),
     new HtmlWebpackPlugin({
-        title: 'Webpack',
-        template: './src/index.html',
-        inject: 'body'
+      title: 'Webpack',
+      template: './src/index.html',
+      inject: 'body'
     })
   ],
   module: {
@@ -44,10 +44,10 @@ module.exports = {
         ]
       },
     ]},
-    devServer:{
-      static:{
-        directory: path.join(__dirname, "dist"), 
-      }
-    },
+  devServer:{
+    static:{
+      directory: path.join(__dirname, "dist"), 
+    }
+  },
     
-  };
+};
