@@ -5,9 +5,10 @@ import fetchStockData from './stockdata';
 import fetchStockNews from './stocknews';
 
 
-fetchStockData()
-  .then(data => {
-    console.log(data);
+// eslint-disable-next-line no-undef
+fetchStockData("AAPL")
+  .then(processedData => {
+    console.log(processedData);
   })
   .catch(error => {
     console.log(error);
