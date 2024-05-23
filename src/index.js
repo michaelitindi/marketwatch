@@ -37,14 +37,49 @@ window.onload = async () => {
     `).join('')}
   </div>
 `;
-   defaultStockData.innerHTML = `<h3>Top Gainers</h3>
-   <ul>${defaultData.top_gainers.map(stock => `<li>${stock.symbol}: ${stock.change_amount} (${stock.change_percentage}%)</li>`).join('')}</ul>
-  <hr>
-  <h3>Top Losers</h3>
-  <ul>${defaultData.top_losers.map(stock => `<li>${stock.symbol}: ${stock.change_amount} (${stock.change_percentage}%)</li>`).join('')}</ul>
-  <hr>
-   <h3>Most Actively Traded</h3>
-  <ul>${defaultData.most_actively_traded.map(stock => `<li>${stock.symbol}: ${stock.change_amount} (${stock.change_percentage}%)</li>`).join('')}</ul>`;
+  defaultStockData.innerHTML = `
+     <h3>Top Gainers</h3>
+     <div class="row row-cols-1 row-cols-md-2 g-4">
+       ${defaultData.top_gainers.map(stock => `
+         <div class="col">
+           <div class="card">
+             <div class="card-body">
+               <h5 class="card-title">${stock.symbol}</h5>
+               <p class="card-text">Change: ${stock.change_amount} (${stock.change_percentage}%)</p>
+             </div>
+           </div>
+         </div>
+       `).join('')}
+     </div>
+     <hr>
+     <h3>Top Losers</h3>
+     <div class="row row-cols-1 row-cols-md-2 g-4">
+       ${defaultData.top_losers.map(stock => `
+         <div class="col">
+           <div class="card">
+             <div class="card-body">
+               <h5 class="card-title">${stock.symbol}</h5>
+               <p class="card-text">Change: ${stock.change_amount} (${stock.change_percentage}%)</p>
+             </div>
+           </div>
+         </div>
+       `).join('')}
+     </div>
+     <hr>
+     <h3>Most Actively Traded</h3>
+     <div class="row row-cols-1 row-cols-md-2 g-4">
+       ${defaultData.most_actively_traded.map(stock => `
+         <div class="col">
+           <div class="card">
+             <div class="card-body">
+               <h5 class="card-title">${stock.symbol}</h5>
+               <p class="card-text">Change: ${stock.change_amount} (${stock.change_percentage}%)</p>
+             </div>
+           </div>
+         </div>
+       `).join('')}
+     </div>
+   `;
 };
 
 // Search button click handler
@@ -77,14 +112,35 @@ searchButton.addEventListener('click', async () => {
       </div>
     `).join('')}
   </div>`;
-  stockData.innerHTML = ` <h3>Stock Data for ${symbol}</h3>
-  <ul>
-   <li>Open: ${data.open}</li>
-  <li>High: ${data.high}</li>
-  <li>Low: ${data.low}</li>
-  <li>Close: ${data.close}</li>
-  <li>Volume: ${data.volume}</li>
-  </ul>`; 
+  stockData.innerHTML = `
+   <h3>Stock Data for ${symbol}</h3>
+   <div class="row row-cols-1 row-cols-md-2 g-4">
+     <div class="col">
+       <div class="card">
+         <div class="card-body">
+           <h5 class="card-title">Open</h5>
+           <p class="card-text">${data.open}</p>
+         </div>
+       </div>
+     </div>
+     <div class="col">
+       <div class="card">
+         <div class="card-body">
+           <h5 class="card-title">High</h5>
+           <p class="card-text">${data.close}</p>
+         </div>
+       </div>
+     </div>
+     <div class="col">
+       <div class="card">
+         <div class="card-body">
+           <h5 class="card-title">Low</h5>
+           <p class="card-text">${data.change}</p>
+         </div>
+       </div>
+     </div>
+    </div>
+ `;
   // Clear default stock sections and make specific sections visible
   defaultStockNews.innerHTML = '';
   defaultStockData.innerHTML = '';
