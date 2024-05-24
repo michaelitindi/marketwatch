@@ -65,7 +65,7 @@ window.onload = async () => {
      </div>
    `;
   defaultStockNews.innerHTML = defaultStockNews.innerHTML =  `
-  <h3>Default Stock News</h3>
+  <h3>Stock News</h3>
   <div class="row row-cols-1 row-cols-md-2 g-4">
     ${defaultNews.map(article => `
       <div class="col">
@@ -122,7 +122,7 @@ searchButton.addEventListener('click', async () => {
      <div class="col">
        <div class="card">
          <div class="card-body">
-           <h5 class="card-title">Low</h5>
+           <h5 class="card-title">Change</h5>
            <p class="card-text">${data.change}</p>
          </div>
        </div>
