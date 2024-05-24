@@ -64,7 +64,7 @@ window.onload = async () => {
        `).join('')}
      </div>
    `;
-   defaultStockNews.innerHTML = defaultStockNews.innerHTML =  `
+  defaultStockNews.innerHTML = defaultStockNews.innerHTML =  `
   <h3>Default Stock News</h3>
   <div class="row row-cols-1 row-cols-md-2 g-4">
     ${defaultNews.map(article => `
@@ -129,7 +129,7 @@ searchButton.addEventListener('click', async () => {
      </div>
     </div>
  `;
- stockNews.innerHTML = `<h3>Default Stock News</h3>
+  stockNews.innerHTML = `<h3>Default Stock News</h3>
   <div class="row row-cols-1 row-cols-md-2 g-4">
     ${news.map(article => `
       <div class="col">
