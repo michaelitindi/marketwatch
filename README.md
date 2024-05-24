@@ -1,10 +1,11 @@
 # Project Title
-Your project title
+Marketwatch
 # Author name
-Your nane
+Michael Itindi
 # Description
-Describe your project here
+Marketwatch is a web application designed for  investors and individuals who want to stay informed about the stock market.
+Marketwatch helps you to find the stock information you need quickly and easily so that you can make informed investment decisions.
 # Setup
-How to configure and use your project
+run npm install
 # License
-Which license are you using
+MIT license
