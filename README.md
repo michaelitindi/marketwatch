@@ -13,3 +13,4 @@ Run npm run start to run the the application on localhost.
 
 # License
 MIT license
+email: michaelitindi@gmail.com
